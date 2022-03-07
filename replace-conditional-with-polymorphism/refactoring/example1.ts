@@ -56,7 +56,7 @@ class PlatinumUserLevel implements IUserLevel {
     }
 }
 
-function getPrice(user: IUser, book: Book) {
+function getBookPrice(user: IUser, book: Book) {
     let level = user.getUserLevel()
     return level.getBookPrice(book);
 }
@@ -65,3 +65,26 @@ function getEpubPrice(user: IUser, epub: Epub) {
     let level = user.getUserLevel()
     return level.getEpubPrice(epub);
 }
+
+let book: Book = {
+    getPrice: () => 1,
+}
+let epub: Epub = {
+    getPrice: () => 2,
+}
+
+let regularUser: IUser = {
+    getUserLevel: () => {
+        return new RegularUserLevel();
+    }
+}
+console.log("RegularUserLevel getPrice", getBookPrice(regularUser, book));
+console.log("RegularUserLevel getEpubPrice", getEpubPrice(regularUser, epub));
+
+let goldUser: IUser = {
+    getUserLevel: () => {
+        return new GoldUserLevel();
+    }
+}
+console.log("RegularUserLevel getPrice", getBookPrice(goldUser, book));
+console.log("RegularUserLevel getEpubPrice", getEpubPrice(goldUser, epub));
