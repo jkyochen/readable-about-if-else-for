@@ -1,5 +1,7 @@
 ## Readable about if/else for
 
+[Blog Example](https://ziqiang.blog/2022/03/15/technology/readable-about-if-else-for/)
+
 1. if-else-guard-clauses
     1. [Replace Nested Conditional with Guard Clauses](https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html)
 1. if-else-polymorphism
